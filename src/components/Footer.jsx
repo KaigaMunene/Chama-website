@@ -25,7 +25,7 @@ const Footer = () => {
 
         <hr className="border-gray-700" />
 
-        <div className="flex flex-wrap justify-between items-center mt-4 gap-4">
+        <div className="flex flex-wrap justify-around items-center mt-4 gap-4">
           <div className="text-smoke_grey">
             <p>&copy;kalekye Mumo 2025. All rights reserved.</p>
           </div>
