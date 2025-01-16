@@ -1,11 +1,13 @@
 import Contact from './Contact';
+import Hero from './Hero';
 
 function Home() {
-	return (
-		<div>
-			<Contact />
-		</div>
-	);
+  return (
+    <div>
+      <Hero />
+      <Contact />
+    </div>
+  );
 }
 
 export default Home;
