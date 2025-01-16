@@ -1,0 +1,110 @@
+import Carousel from '../components/Carousel';
+import one from '../assets/images/podcast-4.jpg';
+import two from '../assets/images/podcast-2.jpeg';
+import three from '../assets/images/podcast-3.jpeg';
+import four from '../assets/images/1-empower.png';
+import five from '../assets/images/2-empower.png';
+import six from '../assets/images/3-empower.png';
+import seven from '../assets/images/talk-1.png';
+import eight from '../assets/images/talk-2.png';
+import nine from '../assets/images/talk-3.png';
+
+const voiceImages = [
+    { src: seven, alt: 'Event hosting' },
+    { src: eight, alt: 'Podcasting' },
+    { src: nine, alt: 'Voiceover recording' },
+  ];
+const talkImages = [
+    { src: one, alt: 'Event hosting' },
+    { src: two, alt: 'Podcasting' },
+    { src: three, alt: 'Voiceover recording' },
+  ];
+const empowerImages = [
+    { src: four, alt: 'Event hosting' },
+    { src: five, alt: 'Podcasting' },
+    { src: six, alt: 'Voiceover recording' },
+  ];
+
+const AboutPage = () => {
+  return (
+    <div className="min-h-screen bg-gray-100 text-gray-800">
+      <header className="bg-gradient-to-r from-purple-600 to-pink-500 text-white py-12">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-4xl font-bold mb-4">
+            A Voice That Inspires, A Mentor That Transforms
+          </h1>
+          <p className="text-lg font-light">
+            Empowering Voices, Creating Impact
+          </p>
+        </div>
+      </header>
+
+      <main className="container mx-auto px-4 py-12">
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold text-center mb-6">
+            Meet Kalekye Mumo
+          </h2>
+          <p className="text-lg leading-relaxed text-center max-w-3xl mx-auto">
+            With over 15 years in Kenyan mainstream media, I’ve earned the title
+            Queen of Media for my ability to captivate audiences through dynamic
+            communication. As a celebrated event host, panel moderator, and
+            voiceover artist, I bring professionalism and charisma to every
+            stage and microphone. My voice has inspired laughter, sparked
+            change, and created unforgettable moments—whether on radio, TV, or
+            live events.
+          </p>
+        </section>
+
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12">
+          <div>
+            <h3 className="text-2xl font-bold mb-4">
+              Empowering Through KM Network
+            </h3>
+            <p className="text-lg leading-relaxed">
+              Through my consultancy, KM Network, I designed the Own Your Mic
+              programs to train future hosts, voiceover artists, and public
+              speakers to excel and transform their speaking opportunities into
+              memorable experiences.
+            </p>
+          </div>
+          <div className="rounded-lg overflow-hidden shadow-lg">
+            <Carousel images={empowerImages} />
+          </div>
+        </section>
+
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12">
+          <div className="rounded-lg overflow-hidden shadow-lg">
+            <Carousel images={talkImages} />
+          </div>
+          <div>
+            <h3 className="text-2xl font-bold mb-4">
+              Conversations with Kalekye
+            </h3>
+            <p className="text-lg leading-relaxed">
+              As the creator of <em>Conversations with Kalekye</em>, Africa’s
+              Best Relationship Podcast of 2024, I explore authentic discussions
+              on love and accountability, amplifying stories that connect and
+              inspire.
+            </p>
+          </div>
+        </section>
+
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h3 className="text-2xl font-bold mb-4">Voiceover Excellence</h3>
+            <p className="text-lg leading-relaxed">
+              My voiceover work has brought life to documentaries, commercials,
+              and infomercials, delivering powerful messaging for local and
+              international brands.
+            </p>
+          </div>
+          <div className="rounded-lg overflow-hidden shadow-lg">
+            <Carousel images={voiceImages} />
+          </div>
+        </section>
+      </main>
+    </div>
+  );
+};
+
+export default AboutPage;

@@ -78,7 +78,7 @@ const ContactPage = () => {
             <p className="text-blackberry">
               Phone:{' '}
               <Link to="tel:+1234567890" className=" font-light no-underline">
-                +1 234 567 890
+                +254 707 233224
               </Link>
             </p>
             <p className="text-blackberry font-bold text-lg">Follow Us:</p>
