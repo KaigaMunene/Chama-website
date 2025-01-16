@@ -2,28 +2,22 @@ import Carousel from '../components/Carousel';
 import one from '../assets/images/podcast-4.jpg';
 import two from '../assets/images/podcast-2.jpeg';
 import three from '../assets/images/podcast-3.jpeg';
-import four from '../assets/images/1-empower.png';
-import five from '../assets/images/2-empower.png';
-import six from '../assets/images/3-empower.png';
-import seven from '../assets/images/talk-1.png';
-import eight from '../assets/images/talk-2.png';
-import nine from '../assets/images/talk-3.png';
 
 const voiceImages = [
-    { src: seven, alt: 'Event hosting' },
-    { src: eight, alt: 'Podcasting' },
-    { src: nine, alt: 'Voiceover recording' },
-  ];
+  { src: one, alt: 'Event hosting' },
+  { src: two, alt: 'Podcasting' },
+  { src: three, alt: 'Voiceover recording' },
+];
 const talkImages = [
-    { src: one, alt: 'Event hosting' },
-    { src: two, alt: 'Podcasting' },
-    { src: three, alt: 'Voiceover recording' },
-  ];
+  { src: one, alt: 'Event hosting' },
+  { src: two, alt: 'Podcasting' },
+  { src: three, alt: 'Voiceover recording' },
+];
 const empowerImages = [
-    { src: four, alt: 'Event hosting' },
-    { src: five, alt: 'Podcasting' },
-    { src: six, alt: 'Voiceover recording' },
-  ];
+  { src: one, alt: 'Event hosting' },
+  { src: two, alt: 'Podcasting' },
+  { src: three, alt: 'Voiceover recording' },
+];
 
 const AboutPage = () => {
   return (
