@@ -1,0 +1,13 @@
+# Static assets
+*.min.js
+*.png
+*.jpg
+*.ico
+
+# Generated files
+*.d.ts
+
+# Ignore specific folders
+coverage/
+__snapshots__/
+tmp/

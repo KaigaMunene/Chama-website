@@ -18,15 +18,13 @@ dist-ssr
 .idea
 .DS_Store
 *.suo
-*.ntvs*
-*.njsproj
 *.sln
 *.sw?
 
 .DS_STORE
 node_modules
-scripts/flow/*/.flowconfig
-.flowconfig
+npm-debug.log
+
 *~
 *.pyc
 .grunt
