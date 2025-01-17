@@ -40,7 +40,7 @@ const HeroSection = () => {
             </h1>
             <div className="flex flex-col space-y-4">
               <Link
-                to="/own-your-mic-programs"
+                to="/ownYourMic"
                 className="bg-purple-600 text-white text-center px-4 py-2 rounded-full text-sm md:text-base hover:bg-purple-700 transition"
               >
                 Join the Own Your Mic Programs

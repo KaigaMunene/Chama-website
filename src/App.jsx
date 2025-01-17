@@ -4,6 +4,8 @@ import React, { Suspense } from 'react';
 import Footer from './components/Footer';
 const Contact = React.lazy(() => import('./pages/Contact'));
 const Home = React.lazy(() => import('./pages/Home'));
+const About = React.lazy(() => import('./pages/About'));
+const OwnYourMic = React.lazy(() => import('./pages/OwnYourMic'));
 
 function App() {
   return (
@@ -11,6 +13,8 @@ function App() {
       <Suspense fallback={<Loading />}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/ownYourMic" element={<OwnYourMic />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
