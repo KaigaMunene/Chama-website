@@ -118,6 +118,7 @@ const ContactPage = () => {
             type="text"
             id="name"
             name="name"
+            autoComplete='name'
             value={formData.name}
             onChange={handleChange}
             placeholder="Your Full Name"
@@ -133,6 +134,7 @@ const ContactPage = () => {
             type="email"
             id="email"
             name="email"
+            autoComplete='email'
             value={formData.email}
             onChange={handleChange}
             placeholder="Your Email Address"
