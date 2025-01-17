@@ -3,6 +3,7 @@ import Hero from './Hero';
 import About from './About';
 import WorkWithUs from './WorkWithUs';
 import OwnYourMic from './OwnYourMic';
+import WhatIOffer from './WhatIOffer';
 
 function Home() {
   return (
@@ -11,6 +12,7 @@ function Home() {
       <About />
       <OwnYourMic />
       <WorkWithUs />
+      <WhatIOffer />
       <Contact />
     </div>
   );
