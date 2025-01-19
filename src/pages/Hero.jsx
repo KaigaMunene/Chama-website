@@ -15,7 +15,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-black opacity-40"></div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col lg:flex-row items-center lg:justify-between h-full px-6 md:px-12 pb-16 lg:pb-0">
+      <div className="relative flex flex-col lg:flex-row items-center lg:justify-between h-full px-6 md:px-12 pb-16 lg:pb-0">
         {/* Left Content */}
         <div className="hero-left-content w-full lg:w-1/2 mt-12 md:mt-20 lg:mt-32 text-center lg:text-left">
           <div className="hero-text-container text-white">

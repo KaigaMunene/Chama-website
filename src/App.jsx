@@ -5,6 +5,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from './components/Footer';
+import Navbar from './components/NavBar';
 
 const Contact = React.lazy(() => import('./pages/Contact'));
 const Home = React.lazy(() => import('./pages/Home'));
@@ -17,13 +18,14 @@ function App() {
   return (
     <Router>
       <Suspense fallback={<Loading />}>
+      <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/ownYourMic" element={<OwnYourMic />} />
-          <Route path="/workWithUs" element={<WorkWithUs />} />
-          <Route path="/whatIOffer" element={<WhatIOffer />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/" id='home' element={<Home />} />
+          <Route path="/about" id='about' element={<About />} />
+          <Route path="/ownYourMic" id='ownYourMic' element={<OwnYourMic />} />
+          <Route path="/workWithUs" id='workWithUs' element={<WorkWithUs />} />
+          <Route path="/whatIOffer" id='whatIOffer' element={<WhatIOffer />} />
+          <Route path="/contact" id='contact' element={<Contact />} />
         </Routes>
         <Footer />
       </Suspense>

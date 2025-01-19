@@ -9,16 +9,18 @@ import Contact from './Contact';
 
 function Home() {
   return (
-    <div>
-      <Hero />
-      <About />
-      <OwnYourMic />
-      <WorkWithUs />
-      <WhatIOffer />
-      <Conversations />
-      <TestimonialSlider />
-      <Contact />
-    </div>
+    <section id="home">
+      <div>
+        <Hero />
+        <About />
+        <OwnYourMic />
+        <WorkWithUs />
+        <WhatIOffer />
+        <Conversations />
+        <TestimonialSlider />
+        <Contact />
+      </div>
+    </section>
   );
 }
 

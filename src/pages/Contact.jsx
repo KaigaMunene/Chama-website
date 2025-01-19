@@ -59,8 +59,8 @@ const ContactPage = () => {
 
   return (
     <section
-      id="contact-section"
-      className="flex flex-col md:flex-row p-6 space-y-6 md:space-y-0 font-forum bg-brown w-full h-100%"
+      id="contact"
+      className="flex flex-col md:flex-row p-6 space-y-6 md:space-y-0 font-forum bg-brown w-full h-full"
     >
       <div className="flex-1 border-2 border-smoke_grey shadow-md outline-none p-4 rounded-md text-center bg-smoke_grey">
         <h1 className="text-3xl font-semibold text-gray-800">Ready to Elevate Your Voice</h1>
