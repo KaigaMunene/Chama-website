@@ -28,7 +28,7 @@ const OwnYourMicPrograms = () => {
         </Helmet>
 
         {/* Hero Section */}
-        <section className="bg-purple-600 text-white text-center py-12 px-6">
+        <section id='own-your-mic' className="bg-purple-600 text-white text-center py-12 px-6">
           <h1 className="text-3xl md:text-5xl font-extrabold mb-4">
             Master the Art of Communication with Own Your Mic
           </h1>
