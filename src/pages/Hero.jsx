@@ -34,7 +34,7 @@ const HeroSection = () => {
 
         {/* Right Content (Card) */}
         <div className="hero-right-content w-full lg:w-1/3 mt-10 md:mt-16 lg:mt-32 flex justify-center lg:justify-end">
-          <div className="bg-gray-50 bg-opacity-10 p-6 rounded-lg shadow-lg max-w-md w-full">
+          <div className="bg-black bg-opacity-20 p-6 rounded-lg">
             <h1 className="text-white text-2xl font-bold mb-4 text-center lg:text-left">
               My Programs
             </h1>

@@ -1,29 +1,31 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
-import logoImage from '../assets/images/logo.png';
+import whiteLogo from '../assets/images/icon_white.png';
+import blackLogo from '../assets/images/icon_black.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Navbar height (adjust this according to your navbar height)
   const navbarHeight = 60;
+  const sections = [
+    'home',
+    'about',
+    'own-your-mic',
+    'services',
+    'podcast',
+    'contact',
+  ];
 
-  // Handle scroll behavior
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleLinkClick = () => {
-    setIsMenuOpen(false);
-  };
+  const handleLinkClick = () => setIsMenuOpen(false);
 
   return (
     <nav
@@ -31,102 +33,62 @@ const Navbar = () => {
         isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+      <div className="container mx-auto px-4 py-3 flex justify-between items-center h-20">
         {/* Logo */}
-        <div className="flex items-center">
-          <Link
-            to="home"
-            smooth={true}
-            duration={500}
-            className="cursor-pointer"
-            onClick={handleLinkClick}
-          >
-            <img src={logoImage} alt="Logo" className="h-10" />{' '}
-            {/* Adjust size as needed */}
-          </Link>
-        </div>
+        <Link
+          to="home"
+          smooth={true}
+          duration={500}
+          className="cursor-pointer"
+          onClick={handleLinkClick}
+        >
+          <img
+            src={isScrolled ? blackLogo : whiteLogo}
+            alt="Logo"
+            className="h-16"
+          />
+        </Link>
 
-        {/* Links (Desktop) */}
-        <div className="hidden md:flex space-x-8">
-          <Link
-            to="home"
-            smooth={true}
-            duration={500}
-            offset={-navbarHeight} // Add offset here
-            className={`cursor-pointer transition ${
-              isScrolled ? 'text-gray-700' : 'text-white'
-            } hover:text-purple-600`}
-            onClick={handleLinkClick}
-          >
-            Home
-          </Link>
-          <Link
-            to="about"
-            smooth={true}
-            duration={500}
-            offset={-navbarHeight} // Add offset here
-            className={`cursor-pointer transition ${
-              isScrolled ? 'text-gray-700' : 'text-white'
-            } hover:text-purple-600`}
-            onClick={handleLinkClick}
-          >
-            About
-          </Link>
-          <Link
-            to="own-your-mic"
-            smooth={true}
-            duration={500}
-            offset={-navbarHeight} // Add offset here
-            className={`cursor-pointer transition ${
-              isScrolled ? 'text-gray-700' : 'text-white'
-            } hover:text-purple-600`}
-            onClick={handleLinkClick}
-          >
-            Own Your Mic
-          </Link>
-          <Link
-            to="services"
-            smooth={true}
-            duration={500}
-            offset={-navbarHeight} // Add offset here
-            className={`cursor-pointer transition ${
-              isScrolled ? 'text-gray-700' : 'text-white'
-            } hover:text-purple-600`}
-            onClick={handleLinkClick}
-          >
-            Services
-          </Link>
-          <Link
-            to="podcast"
-            smooth={true}
-            duration={500}
-            offset={-navbarHeight} // Add offset here
-            className={`cursor-pointer transition ${
-              isScrolled ? 'text-gray-700' : 'text-white'
-            } hover:text-purple-600`}
-            onClick={handleLinkClick}
-          >
-            Podcast
-          </Link>
-        </div>
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center space-x-8">
+          {sections.slice(0, -1).map((section) => (
+            <Link
+              key={section}
+              to={section}
+              smooth={true}
+              duration={500}
+              offset={-navbarHeight}
+              className={`cursor-pointer transition font-medium ${
+                isScrolled ? 'text-gray-700' : 'text-white'
+              } hover:underline decoration-2 hover:text-gold`}
+              onClick={handleLinkClick}
+            >
+              {section
+                .replace(/-/g, ' ')
+                .replace(/\b\w/g, (c) => c.toUpperCase())}
+            </Link>
+          ))}
 
-        {/* Contact Us Button */}
-        <div className="hidden md:block">
+          {/* Contact Us Button */}
           <Link
             to="contact"
             smooth={true}
             duration={500}
-            offset={-navbarHeight} // Add offset here
-            className="bg-purple-600 text-white px-6 py-2 rounded-lg shadow hover:bg-purple-700 transition cursor-pointer"
+            offset={-navbarHeight}
+            className={`border px-6 py-2 rounded-lg transition cursor-pointer font-medium ${
+              isScrolled
+                ? 'border-gray-700 text-gray-700'
+                : 'border-white text-white'
+            } hover:border-brown hover:text-brown`}
             onClick={handleLinkClick}
           >
             Contact Us
           </Link>
         </div>
 
-        {/* Hamburger Menu (Mobile) */}
+        {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden text-gray-700 text-2xl"
+          className={`md:hidden text-2xl ${isScrolled ? 'text-gray-700' : 'text-white'}`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? '✖' : '☰'}
@@ -135,57 +97,22 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white shadow-md">
-          <Link
-            to="about"
-            smooth={true}
-            duration={500}
-            offset={-navbarHeight} // Add offset here
-            className="block px-4 py-2 text-gray-700 hover:bg-purple-100"
-            onClick={handleLinkClick}
-          >
-            About
-          </Link>
-          <Link
-            to="own-your-mic"
-            smooth={true}
-            duration={500}
-            offset={-navbarHeight} // Add offset here
-            className="block px-4 py-2 text-gray-700 hover:bg-purple-100"
-            onClick={handleLinkClick}
-          >
-            Own Your Mic
-          </Link>
-          <Link
-            to="services"
-            smooth={true}
-            duration={500}
-            offset={-navbarHeight} // Add offset here
-            className="block px-4 py-2 text-gray-700 hover:bg-purple-100"
-            onClick={handleLinkClick}
-          >
-            Services
-          </Link>
-          <Link
-            to="podcast"
-            smooth={true}
-            duration={500}
-            offset={-navbarHeight} // Add offset here
-            className="block px-4 py-2 text-gray-700 hover:bg-purple-100"
-            onClick={handleLinkClick}
-          >
-            Podcast
-          </Link>
-          <Link
-            to="contact"
-            smooth={true}
-            duration={500}
-            offset={-navbarHeight} // Add offset here
-            className="block px-4 py-2 text-purple-600 font-bold hover:bg-purple-100"
-            onClick={handleLinkClick}
-          >
-            Contact Us
-          </Link>
+        <div className="md:hidden bg-white shadow-md p-4 space-y-2">
+          {sections.map((section) => (
+            <Link
+              key={section}
+              to={section}
+              smooth={true}
+              duration={500}
+              offset={-navbarHeight}
+              className="block text-gray-700 px-4 py-2 rounded-md hover:bg-purple-100 transition"
+              onClick={handleLinkClick}
+            >
+              {section
+                .replace(/-/g, ' ')
+                .replace(/\b\w/g, (c) => c.toUpperCase())}
+            </Link>
+          ))}
         </div>
       )}
     </nav>

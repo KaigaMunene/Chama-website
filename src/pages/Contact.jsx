@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
-    name: '',
+    firstName: '',
+    lastName: '',
     email: '',
-    service: '',
     message: '',
   });
   const [formErrors, setFormErrors] = useState({});
@@ -22,172 +22,140 @@ const ContactPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Validate the form
     const errors = {};
-    if (!formData.name || formData.name.split(' ').length < 2) {
-      errors.name = 'Please enter your full name.';
-    }
+    if (!formData.firstName) errors.firstName = 'First name is required.';
+    if (!formData.lastName) errors.lastName = 'Last name is required.';
     if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) {
       errors.email = 'Please enter a valid email address.';
     }
-    if (!formData.message) {
-      errors.message = 'Please enter a message.';
-    }
-    if (!formData.service) {
-      errors.service = 'Please select a service.';
-    }
+    if (!formData.message) errors.message = 'Message cannot be empty.';
 
     if (Object.keys(errors).length > 0) {
       setFormErrors(errors);
       return;
     }
 
-    // Reset errors if form submission is successful
     setFormErrors({});
-
-    // Success: Reset form and show success message
     setIsFormSubmitted(true);
-    setFormData({
-      name: '',
-      email: '',
-      service: '',
-      message: '',
-    });
-    setTimeout(() => setIsFormSubmitted(false), 5000); // Hide success message after 5 seconds
+    setFormData({ firstName: '', lastName: '', email: '', message: '' });
+    setTimeout(() => setIsFormSubmitted(false), 5000);
   };
 
   return (
     <section
+      className="flex flex-col md:flex-row w-full min-h-screen font-forum"
       id="contact"
-      className="flex flex-col md:flex-row p-6 space-y-6 md:space-y-0 font-forum bg-brown w-full h-full"
     >
-      <div className="flex-1 border-2 border-smoke_grey shadow-md outline-none p-4 rounded-md text-center bg-smoke_grey">
-        <h1 className="text-3xl font-semibold text-gray-800">Ready to Elevate Your Voice</h1>
-        <h2 className="text-lg text-gray-600 mt-2">Get in Touch</h2>
-
-        <div className="mt-6 space-y-6">
-          <div className="other-contact-info space-y-4">
-            <h2 className="text-2xl font-bold  text-gray-800">How to Reach Us</h2>
-            <p className="text-blackberry">
-              Email:{' '}
-              <Link to="mailto:youremail@example.com" className="font-light no-underline">
-                info@kalekyemumo.com
-              </Link>
-            </p>
-            <p className="text-blackberry">
-              Phone:{' '}
-              <Link to="tel:+1234567890" className=" font-light no-underline">
-                +254 707 233224
-              </Link>
-            </p>
-            <p className="text-blackberry font-bold text-lg">Follow Us:</p>
-            <div className="social-links flex justify-center space-x-4">
-              <div className="flex items-center space-x-2">
-                <FaInstagram className="text-orange-600" />
-                <Link to="https://www.instagram.com/kmnetwork254/" target="_blank" className=" no-underline hover:underline">
-                  Instagram
-                </Link>
-              </div>
-              <div className="flex items-center space-x-2">
-                <FaLinkedin className="bg-blue-600 text-white" />
-                <Link to="#" target="_blank" className=" no-underline hover:underline">
-                  LinkedIn
-                </Link>
-              </div>
-              <div className="flex items-center space-x-2">
-                <FaYoutube className="text-red-600" />
-                <Link to="#" target="_blank" className=" no-underline hover:underline">
-                  YouTube
-                </Link>
-              </div>
-            </div>
-          </div>
+      {/* Left Side: Contact Info */}
+      <div className="bg-gold text-dark flex flex-col justify-center items-center px-12 py-16 md:w-1/2">
+        <h1 className="text-5xl font-bold mb-6">
+          Ready to elevate your voice{' '}
+        </h1>
+        <h2 className='font-semibold text-2xl mb-2'>How to reach Us</h2>
+        <p className="mb-2">
+          Email:{' '}
+          <Link to="mailto:info@kalekyemumo.com" className="underline">
+            info@kalekyemumo.com
+          </Link>
+        </p>
+        <p className="mb-4">
+          Phone:{' '}
+          <Link to="tel:+254707233224" className="underline">
+            +254 707 233224
+          </Link>
+        </p>
+        <h2 className='font-semibold text-2xl mb-2'>Follow Us:</h2>
+        <div className="flex justify-center space-x-6">
+          <Link to="#" className="text-dark hover:text-white">
+            <FaInstagram size={24} />
+          </Link>
+          <Link to="#" className="text-dark hover:text-white">
+            <FaLinkedin size={24} />
+          </Link>
+          <Link to="#" className="text-dark hover:text-white">
+            <FaYoutube size={24} />
+          </Link>
         </div>
       </div>
 
-      {/* Vertical Divider */}
-      <div className="w-px bg-gray-300 hidden md:block mx-8"></div>
-
-      <div className="flex-1 border-2 border-white shadow-md outline-none p-4 rounded-md bg-white">
-        <form id="contact-form" onSubmit={handleSubmit} className="space-y-4">
-          <label htmlFor="name" className="text-lg font-bold text-gray-700">
-            Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            autoComplete='name'
-            value={formData.name}
-            onChange={handleChange}
-            placeholder="Your Full Name"
-            required
-            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          {formErrors.name && <p className="text-red-500 text-sm">{formErrors.name}</p>}
-
-          <label htmlFor="email" className="text-lg font-bold text-gray-700">
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            autoComplete='email'
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="Your Email Address"
-            required
-            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          {formErrors.email && <p className="text-red-500 text-sm">{formErrors.email}</p>}
-
-          <label htmlFor="service" className="text-lg font-bold text-gray-700">
-            Service of Interest
-          </label>
-          <select
-            id="service"
-            name="service"
-            value={formData.service}
-            onChange={handleChange}
-            required
-            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            <option value="" disabled>
-              Select a Service
-            </option>
-            <option value="hosting">Hosting</option>
-            <option value="voiceover">Voiceover</option>
-            <option value="own-your-mic">Own Your Mic</option>
-            <option value="other">Other</option>
-          </select>
-          {formErrors.service && <p className="text-red-500 text-sm">{formErrors.service}</p>}
-
-          <label htmlFor="message" className="text-lg font-bold text-gray-700">
-            Message
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            rows={4}
-            value={formData.message}
-            onChange={handleChange}
-            placeholder="Your Message"
-            required
-            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          ></textarea>
-          {formErrors.message && <p className="text-red-500 text-sm">{formErrors.message}</p>}
-
+      {/* Right Side: Contact Form */}
+      <div className="bg-cream flex flex-col justify-center items-center px-12 py-16 md:w-1/2">
+        <h2 className="text-3xl font-semibold text-gray-900 mb-6">
+          Get in Touch
+        </h2>
+        <form onSubmit={handleSubmit} className="w-full max-w-lg space-y-6">
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm font-semibold text-gray-700">
+                First Name
+              </label>
+              <input
+                type="text"
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
+                className="w-full p-2 border border-gray-300 rounded-md"
+              />
+              {formErrors.firstName && (
+                <p className="text-red-500 text-xs">{formErrors.firstName}</p>
+              )}
+            </div>
+            <div>
+              <label className="block text-sm font-semibold text-gray-700">
+                Last Name
+              </label>
+              <input
+                type="text"
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
+                className="w-full p-2 border border-gray-300 rounded-md"
+              />
+              {formErrors.lastName && (
+                <p className="text-red-500 text-xs">{formErrors.lastName}</p>
+              )}
+            </div>
+          </div>
+          <div>
+            <label className="block text-sm font-semibold text-gray-700">
+              Email
+            </label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full p-2 border border-gray-300 rounded-md"
+            />
+            {formErrors.email && (
+              <p className="text-red-500 text-xs">{formErrors.email}</p>
+            )}
+          </div>
+          <div>
+            <label className="block text-sm font-semibold text-gray-700">
+              Message
+            </label>
+            <textarea
+              name="message"
+              rows="4"
+              value={formData.message}
+              onChange={handleChange}
+              className="w-full p-2 border border-gray-300 rounded-md"
+            ></textarea>
+            {formErrors.message && (
+              <p className="text-red-500 text-xs">{formErrors.message}</p>
+            )}
+          </div>
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full bg-black text-white py-3 rounded-md hover:bg-gray-800"
           >
-            Send Message
+            Submit →
           </button>
-
           {isFormSubmitted && (
-            <p className="text-green-500 text-center mt-4">Message sent successfully!</p>
+            <p className="text-green-500 text-center mt-4">
+              Message sent successfully!
+            </p>
           )}
         </form>
       </div>

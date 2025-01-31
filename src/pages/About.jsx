@@ -2,6 +2,9 @@ import Carousel from '../components/Carousel';
 import one from '../assets/images/podcast-4.jpg';
 import two from '../assets/images/podcast-2.jpeg';
 import three from '../assets/images/podcast-3.jpeg';
+import empowerOne from '../assets/images/empower-1.jpg';
+import empowerTwo from '../assets/images/empower-2.jpg';
+import empowerThree from '../assets/images/empower-3.jpg';
 
 const voiceImages = [
   { src: one, alt: 'Event hosting' },
@@ -14,16 +17,16 @@ const talkImages = [
   { src: three, alt: 'Voiceover recording' },
 ];
 const empowerImages = [
-  { src: one, alt: 'Event hosting' },
-  { src: two, alt: 'Podcasting' },
-  { src: three, alt: 'Voiceover recording' },
+  { src: empowerOne, alt: 'Event hosting' },
+  { src: empowerTwo, alt: 'Podcasting' },
+  { src: empowerThree, alt: 'Voiceover recording' },
 ];
 
 const AboutPage = () => {
   return (
     <section id="about">
       <div className="min-h-screen bg-gray-100 text-gray-800">
-        <header className="bg-gradient-to-r from-purple-600 to-pink-500 text-white py-12">
+        <header className="bg-smoke_grey text-dark py-12">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl font-bold mb-4">
               A Voice That Inspires, A Mentor That Transforms
@@ -34,7 +37,7 @@ const AboutPage = () => {
           </div>
         </header>
 
-        <main className="container mx-auto px-4 py-12">
+        <main className="container mx-auto px-4 py-12 font-forum">
           <section className="mb-12">
             <h2 className="text-3xl font-bold text-center mb-6">
               Meet Kalekye Mumo
@@ -50,8 +53,8 @@ const AboutPage = () => {
             </p>
           </section>
 
-          <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12">
-            <div>
+          <section className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center gap-6 mb-12">
+            <div className="w-full md:w-1/2 text-center md:text-left">
               <h3 className="text-2xl font-bold mb-4">
                 Empowering Through KM Network
               </h3>
@@ -62,16 +65,16 @@ const AboutPage = () => {
                 into memorable experiences.
               </p>
             </div>
-            <div className="rounded-lg overflow-hidden shadow-lg">
+            <div className="w-full md:w-1/2 rounded-lg overflow-hidden shadow-lg">
               <Carousel images={empowerImages} />
             </div>
           </section>
 
-          <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12">
-            <div className="rounded-lg overflow-hidden shadow-lg">
+          <section className="flex flex-col md:flex-col lg:flex-row items-center gap-6 mb-12">
+            <div className="w-full md:w-1/2 rounded-lg overflow-hidden shadow-lg">
               <Carousel images={talkImages} />
             </div>
-            <div>
+            <div className="w-full md:w-1/2 text-center md:text-left">
               <h3 className="text-2xl font-bold mb-4">
                 Conversations with Kalekye
               </h3>
@@ -84,8 +87,8 @@ const AboutPage = () => {
             </div>
           </section>
 
-          <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div>
+          <section className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center gap-6 mb-12">
+            <div className="w-full md:w-1/2 text-center md:text-left">
               <h3 className="text-2xl font-bold mb-4">Voiceover Excellence</h3>
               <p className="text-lg leading-relaxed">
                 My voiceover work has brought life to documentaries,
@@ -93,7 +96,7 @@ const AboutPage = () => {
                 local and international brands.
               </p>
             </div>
-            <div className="rounded-lg overflow-hidden shadow-lg">
+            <div className="w-full md:w-1/2 rounded-lg overflow-hidden shadow-lg">
               <Carousel images={voiceImages} />
             </div>
           </section>
