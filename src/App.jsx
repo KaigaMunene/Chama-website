@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import React, { Suspense, useState, useEffect } from 'react';
+import React, { Suspense } from 'react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import 'react-toastify/dist/ReactToastify.css';
@@ -18,25 +18,6 @@ const WhatIOffer = React.lazy(() => import('./pages/WhatIOffer'));
 const Podcast = React.lazy(() => import('./pages/Conversations'));
 
 function App() {
-  const [isAppLoading, setIsAppLoading] = useState(true);
-
-  useEffect(() => {
-    const handleLoad = () => {
-      setIsAppLoading(false);
-    };
-
-    // Listen for the page load event
-    window.addEventListener('load', handleLoad);
-
-    return () => {
-      window.removeEventListener('load', handleLoad); // Cleanup the event listener
-    };
-  }, []);
-
-  if (isAppLoading) {
-    return <GlobalLoading />;
-  }
-
   return (
     <Router>
       <Suspense fallback={<PageLoading />}>
@@ -55,15 +36,6 @@ function App() {
         <Footer />
       </Suspense>
     </Router>
-  );
-}
-
-// Global loading screen (shown while the entire app is loading)
-function GlobalLoading() {
-  return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
-      <h2 className="text-xl font-semibold">🔄 Loading the app...</h2>
-    </div>
   );
 }
 
