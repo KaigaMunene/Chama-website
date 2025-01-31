@@ -3,7 +3,9 @@ import promotionalVideo from '../assets/videos/podcast-on.mp4';
 import testimonialImage1 from '../assets/images/free-webinar.jpeg';
 import testimonialImage2 from '../assets/images/free-webinar.jpeg';
 import testimonialImage3 from '../assets/images/free-webinar.jpeg';
-import ownYourMic from '../assets/images/own-your-mic.jpeg';
+import hostProgram from '../assets/images/host-program.jpeg';
+import publicSpeaking from '../assets/images/public-speaking.jpeg';
+import voiceOver from '../assets/images/voiceover.jpeg';
 
 const OwnYourMicPrograms = () => {
   return (
@@ -28,7 +30,7 @@ const OwnYourMicPrograms = () => {
         </Helmet>
 
         {/* Hero Section */}
-        <section id='own-your-mic' className="bg-purple-600 text-white text-center py-12 px-6">
+        <section id='own-your-mic' className="bg-smoke_grey text-blackberry text-center py-12 px-6">
           <h1 className="text-3xl md:text-5xl font-extrabold mb-4">
             Master the Art of Communication with Own Your Mic
           </h1>
@@ -38,7 +40,7 @@ const OwnYourMicPrograms = () => {
         </section>
 
         {/* Feature Section */}
-        <section className="py-12 px-6 container mx-auto">
+        <section className="bg-cream py-12 px-6 container mx-auto">
           <h2 className="text-2xl md:text-4xl font-extrabold text-gray-800 text-center mb-8">
             Programs Overview
           </h2>
@@ -46,7 +48,7 @@ const OwnYourMicPrograms = () => {
             {/* Host Program */}
             <div className="bg-white shadow-lg rounded-lg overflow-hidden items-center justify-center p-6 flex flex-col text-center hover:shadow-2xl transition duration-300">
               <img
-                src={ownYourMic}
+                src={hostProgram}
                 alt="Own your mic advert"
                 className="rounded-md mb-4 w-full max-w-sm object-contain"
               />
@@ -59,7 +61,7 @@ const OwnYourMicPrograms = () => {
               </p>
               <a
                 href="#host-program"
-                className="px-6 py-3 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 transition duration-300"
+                className="px-6 py-3 bg-gold text-white font-medium rounded-lg hover:bg-blackberry transition duration-300"
                 aria-label="Learn more about The Host Program"
               >
                 Learn More
@@ -69,7 +71,7 @@ const OwnYourMicPrograms = () => {
             {/* Public Speaking Program */}
             <div className="bg-white shadow-lg rounded-lg overflow-hidden p-6 flex flex-col items-center justify-center text-center hover:shadow-2xl transition duration-300">
               <img
-                src={ownYourMic}
+                src={publicSpeaking}
                 alt="Own your mic advert"
                 className="rounded-md mb-4 w-full max-w-sm object-contain"
               />
@@ -83,7 +85,7 @@ const OwnYourMicPrograms = () => {
               </p>
               <a
                 href="#public-speaking-program"
-                className="px-6 py-3 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition duration-300"
+                className="px-6 py-3 bg-gold text-white font-medium rounded-lg hover:bg-blackberry transition duration-300"
                 aria-label="Join the Public Speaking Program"
               >
                 Join Today
@@ -93,7 +95,7 @@ const OwnYourMicPrograms = () => {
             {/* Voiceover Program */}
             <div className="bg-white shadow-lg rounded-lg overflow-hidden items-center justify-center p-6 flex flex-col text-center hover:shadow-2xl transition duration-300">
               <img
-                src={ownYourMic}
+                src={voiceOver}
                 alt="Own your mic advert"
                 className="rounded-md mb-4 w-full max-w-sm object-contain"
               />
@@ -106,7 +108,7 @@ const OwnYourMicPrograms = () => {
               </p>
               <a
                 href="#voiceover-program"
-                className="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition duration-300"
+                className="px-6 py-3 bg-gold text-white font-medium rounded-lg hover:bg-blackberry transition duration-300"
                 aria-label="Enroll in the Voiceover Program"
               >
                 Enroll Now
@@ -133,8 +135,8 @@ const OwnYourMicPrograms = () => {
         </section>
 
         {/* Testimonials Section */}
-        <section className="py-12 px-6 container mx-auto">
-          <h2 className="text-2xl md:text-4xl font-extrabold text-gray-800 text-center mb-8">
+        <section className="bg-gold py-12 px-6 container mx-auto">
+          <h2 className="text-2xl md:text-4xl font-extrabold text-cream text-center mb-8">
             What People Are Saying
           </h2>
           <div className="grid gap-8 md:grid-cols-3">
@@ -180,13 +182,13 @@ const OwnYourMicPrograms = () => {
         </section>
 
         {/* Call to Action Section */}
-        <section className="bg-purple-600 text-white text-center py-12 px-6">
+        <section className="bg-smoke_grey text-blackberry text-center py-12 px-6">
           <h2 className="text-3xl md:text-4xl font-extrabold mb-6">
             Ready to Transform Your Communication Skills?
           </h2>
           <a
             href="#join-programs"
-            className="inline-block px-8 py-4 bg-white text-purple-600 font-medium rounded-lg hover:bg-gray-200 transition duration-300"
+            className="inline-block px-8 py-4 bg-gold text-white font-medium rounded-lg hover:bg-dark hover:text-white transition duration-300"
             aria-label="Join Own Your Mic Programs"
           >
             Join Own Your Mic Programs

@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
-import ownYourMic from '../assets/images/own-your-mic.jpeg';
+import hosting from '../assets/images/hosting-services.jpg';
+import voiceService from '../assets/images/voiceover-service.jpg';
 
 const WhatIOffer = () => {
   return (
-    <div className="bg-gray-100 min-h-screen py-10 px-5 md:px-20 font-forum">
+    <div className="bg-cream min-h-screen py-10 px-5 md:px-20 font-forum">
       {/* Headline Section */}
       <header className="text-center mb-12">
         <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
@@ -20,7 +21,7 @@ const WhatIOffer = () => {
         {/* Hosting Services */}
         <div className="bg-white rounded-lg shadow-lg p-6 md:p-8 transform transition duration-300 hover:scale-105 text-center">
           <img
-            src={ownYourMic}
+            src={hosting}
             alt="Own your mic advert"
             className="rounded-md mb-4 w-full h-48 object-contain mx-auto"
           />
@@ -34,7 +35,7 @@ const WhatIOffer = () => {
           </ul>
           <Link
             to="/contact"
-            className="inline-block mt-6 bg-purple-600 text-white font-medium py-2 px-4 rounded hover:bg-purple-700 transition-all duration-200"
+            className="inline-block mt-6 bg-gold text-white font-medium py-2 px-4 rounded hover:bg-blackberry transition-all duration-200"
             aria-label="Book Kalekye for your event"
           >
             Book Kalekye for Your Event
@@ -44,7 +45,7 @@ const WhatIOffer = () => {
         {/* Voiceover Services */}
         <div className="bg-white rounded-lg shadow-lg p-6 md:p-8 transform transition duration-300 hover:scale-105 text-center">
           <img
-            src={ownYourMic}
+            src={voiceService}
             alt="Own your mic advert"
             className="rounded-md mb-4 w-full h-48 object-contain mx-auto"
           />
@@ -60,7 +61,7 @@ const WhatIOffer = () => {
           </ul>
           <Link
             to="/contact"
-            className="inline-block mt-6 bg-teal-600 text-white font-medium py-2 px-4 rounded hover:bg-teal-700 transition-all duration-200"
+            className="inline-block mt-6 bg-gold text-white font-medium py-2 px-4 rounded hover:bg-blackberry transition-all duration-200"
             aria-label="Request a voiceover"
           >
             Request a Voiceover

@@ -23,7 +23,7 @@ const WorkWithUs = () => {
         </Helmet>
 
         {/* Container */}
-        <div className="container mx-auto px-6 md:px-12 lg:px-20">
+        <div className="container font-forum mx-auto px-6 md:px-12 lg:px-20">
           {/* Headline Section */}
           <div className="text-center mb-10">
             <h1 className="text-3xl md:text-4xl font-extrabold text-gray-800 mb-4">
@@ -36,9 +36,9 @@ const WorkWithUs = () => {
           </div>
 
           {/* Options Section */}
-          <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3">
             {/* Option 1: Own Your Mic Program */}
-            <div className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col items-center p-6">
+            <div className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-2xl hover:scale-105 transform transition duration-300 flex flex-col items-center p-6">
               <img
                 src={ownYourMic}
                 alt="Own your mic advert"
@@ -53,7 +53,7 @@ const WorkWithUs = () => {
               </p>
               <a
                 href="#own-your-mic"
-                className="mt-auto px-6 py-3 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 transition duration-300"
+                className="mt-auto px-6 py-3 bg-gold text-white font-medium rounded-lg hover:bg-blackberry transition duration-300"
                 aria-label="Join the Own Your Mic Program"
               >
                 Learn More
@@ -61,7 +61,7 @@ const WorkWithUs = () => {
             </div>
 
             {/* Option 2: Book a Consultation */}
-            <div className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col items-center p-6">
+            <div className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-2xl hover:scale-105 transform transition duration-300 flex flex-col items-center p-6">
               <img
                 src={bookConsultation}
                 alt="book a consultation details"
@@ -75,7 +75,7 @@ const WorkWithUs = () => {
               </p>
               <a
                 href="#book-consultation"
-                className="mt-auto px-6 py-3 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition duration-300"
+                className="mt-auto px-6 py-3 bg-gold text-white font-medium rounded-lg hover:bg-blackberry transition duration-300"
                 aria-label="Book a Consultation"
               >
                 Get Started
@@ -83,7 +83,7 @@ const WorkWithUs = () => {
             </div>
 
             {/* Option 3: Subscribe to the Podcast */}
-            <div className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col items-center p-6">
+            <div className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-2xl hover:scale-105 transform transition duration-300 flex flex-col items-center p-6">
               <img
                 src={subscribePodcast}
                 alt="Lets have a conversation with Kalekye"
@@ -97,7 +97,7 @@ const WorkWithUs = () => {
               </p>
               <a
                 href="#subscribe-podcast"
-                className="mt-auto px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition duration-300"
+                className="mt-auto px-6 py-3 bg-gold text-white font-medium rounded-lg hover:bg-blackberry transition duration-300"
                 aria-label="Subscribe to the Podcast"
               >
                 Subscribe Now

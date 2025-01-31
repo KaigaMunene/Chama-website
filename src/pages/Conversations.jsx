@@ -2,12 +2,12 @@ const PodcastSection = () => {
   return (
     <section
       className="bg-gray-50 py-12 px-6"
+      id="podcast"
       aria-labelledby="podcast-heading"
     >
       {/* Headline Section */}
       <div className="max-w-7xl mx-auto text-center">
         <h2
-          id="podcast-heading"
           className="text-3xl font-bold text-gray-800 md:text-5xl"
         >
           Discover Conversations That Matter
