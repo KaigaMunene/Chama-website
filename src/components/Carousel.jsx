@@ -1,5 +1,5 @@
-import { useState, useEffect, useCallback } from "react";
-import PropTypes from "prop-types";
+import { useState, useEffect, useCallback } from 'react';
+import PropTypes from 'prop-types';
 
 const Carousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -7,14 +7,14 @@ const Carousel = ({ images }) => {
   // Function to go to the next image
   const handleNext = useCallback(() => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1,
     );
   }, [images.length]);
 
   // Function to go to the previous image
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1,
     );
   };
 
@@ -34,13 +34,15 @@ const Carousel = ({ images }) => {
         {images.map((image, index) => (
           <div
             key={index}
-            className="w-full h-96 flex-shrink-0 overflow-hidden"
-            style={{ aspectRatio: "16 / 9" }}
+            className="w-full flex-shrink-0 flex justify-center items-center overflow-hidden"
+            style={{
+              height: 'auto',
+            }}
           >
             <img
               src={image.src}
               alt={image.alt}
-              className="w-full h-full object-cover"
+              className="max-w-full max-h-full object-contain"
             />
           </div>
         ))}
@@ -69,7 +71,7 @@ const Carousel = ({ images }) => {
             key={index}
             onClick={() => setCurrentIndex(index)}
             className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-              currentIndex === index ? "bg-gray-800" : "bg-gray-400"
+              currentIndex === index ? 'bg-gray-800' : 'bg-gray-400'
             }`}
             aria-label={`Go to slide ${index + 1}`}
           ></button>
@@ -84,7 +86,7 @@ Carousel.propTypes = {
     PropTypes.shape({
       src: PropTypes.string.isRequired,
       alt: PropTypes.string.isRequired,
-    })
+    }),
   ).isRequired,
 };
 

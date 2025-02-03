@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FaInstagram, FaLinkedin, FaYoutube } from 'react-icons/fa';
+import { FaInstagram, FaLinkedin, FaYoutube, FaFacebook } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const ContactPage = () => {
@@ -7,8 +7,10 @@ const ContactPage = () => {
     firstName: '',
     lastName: '',
     email: '',
+    service: '',
     message: '',
   });
+
   const [formErrors, setFormErrors] = useState({});
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
@@ -28,6 +30,9 @@ const ContactPage = () => {
     if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) {
       errors.email = 'Please enter a valid email address.';
     }
+    if (!formData.service) {
+      errors.service = 'Please select a service.';
+    }
     if (!formData.message) errors.message = 'Message cannot be empty.';
 
     if (Object.keys(errors).length > 0) {
@@ -37,7 +42,7 @@ const ContactPage = () => {
 
     setFormErrors({});
     setIsFormSubmitted(true);
-    setFormData({ firstName: '', lastName: '', email: '', message: '' });
+    setFormData({ firstName: '', lastName: '', email: '', service: '', message: '' });
     setTimeout(() => setIsFormSubmitted(false), 5000);
   };
 
@@ -51,7 +56,7 @@ const ContactPage = () => {
         <h1 className="text-5xl font-bold mb-6">
           Ready to elevate your voice{' '}
         </h1>
-        <h2 className='font-semibold text-2xl mb-2'>How to reach Us</h2>
+        <h2 className="font-semibold text-2xl mb-2">How to reach Us</h2>
         <p className="mb-2">
           Email:{' '}
           <Link to="mailto:info@kalekyemumo.com" className="underline">
@@ -64,7 +69,7 @@ const ContactPage = () => {
             +254 707 233224
           </Link>
         </p>
-        <h2 className='font-semibold text-2xl mb-2'>Follow Us:</h2>
+        <h2 className="font-semibold text-2xl mb-2">Follow Us:</h2>
         <div className="flex justify-center space-x-6">
           <Link to="#" className="text-dark hover:text-white">
             <FaInstagram size={24} />
@@ -74,6 +79,9 @@ const ContactPage = () => {
           </Link>
           <Link to="#" className="text-dark hover:text-white">
             <FaYoutube size={24} />
+          </Link>
+          <Link to="#" className="text-dark hover:text-white">
+            <FaFacebook size={24} />
           </Link>
         </div>
       </div>
@@ -133,6 +141,29 @@ const ContactPage = () => {
           </div>
           <div>
             <label className="block text-sm font-semibold text-gray-700">
+              Service of Interest
+            </label>
+            <select
+              name="service"
+              value={formData.service}
+              onChange={handleChange}
+              className="w-full p-2 border border-gray-300 rounded-md"
+            >
+              <option value="" disabled>
+                Select a Service
+              </option>
+              <option value="hosting">Hosting</option>
+              <option value="voiceover">Voiceover</option>
+              <option value="own-your-mic">Own Your Mic</option>
+              <option value="other">Other</option>
+            </select>
+            {formErrors.service && (
+              <p className="text-red-500 text-xs">{formErrors.service}</p>
+            )}
+          </div>
+
+          <div>
+            <label className="block text-sm font-semibold text-gray-700">
               Message
             </label>
             <textarea
@@ -148,7 +179,7 @@ const ContactPage = () => {
           </div>
           <button
             type="submit"
-            className="w-full bg-black text-white py-3 rounded-md hover:bg-gray-800"
+            className="w-full bg-black text-white py-3 rounded-md hover:bg-gold"
           >
             Submit →
           </button>

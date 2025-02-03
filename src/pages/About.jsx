@@ -5,11 +5,12 @@ import three from '../assets/images/podcast-3.jpeg';
 import empowerOne from '../assets/images/empower-1.jpg';
 import empowerTwo from '../assets/images/empower-2.jpg';
 import empowerThree from '../assets/images/empower-3.jpg';
+import voiceoverTwo from '../assets/images/voiceover-2.jpg';
+import voiceoverThree from '../assets/images/voiceover-3.webp';
 
 const voiceImages = [
-  { src: one, alt: 'Event hosting' },
-  { src: two, alt: 'Podcasting' },
-  { src: three, alt: 'Voiceover recording' },
+  { src: voiceoverTwo, alt: 'Podcasting' },
+  { src: voiceoverThree, alt: 'Voiceover recording' },
 ];
 const talkImages = [
   { src: one, alt: 'Event hosting' },
@@ -26,7 +27,7 @@ const AboutPage = () => {
   return (
     <section id="about">
       <div className="min-h-screen bg-gray-100 text-gray-800">
-        <header className="bg-smoke_grey text-dark py-12">
+        <header className="bg-gold text-white py-12">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl font-bold mb-4">
               A Voice That Inspires, A Mentor That Transforms

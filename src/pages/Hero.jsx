@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import hero from "../assets/images/about.jpg";
+import { Link } from 'react-router-dom';
+import hero from '../assets/images/about.jpg';
 
 const HeroSection = () => {
   return (
@@ -7,8 +7,8 @@ const HeroSection = () => {
       className="relative hero h-screen font-forum"
       style={{
         backgroundImage: `url(${hero})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
       }}
     >
       {/* Overlay */}
@@ -26,7 +26,8 @@ const HeroSection = () => {
               </span>
             </h1>
             <h2 className="text-sm sm:text-base md:text-lg font-light">
-              Award-Winning Podcaster | Renowned Host | Voiceover Artist | <br />
+              Award-Winning Podcaster | Renowned Host | Voiceover Artist |{' '}
+              <br />
               Creator of Own Your Mic Programs
             </h2>
           </div>
@@ -41,25 +42,25 @@ const HeroSection = () => {
             <div className="flex flex-col space-y-4">
               <Link
                 to="/ownYourMic"
-                className="bg-purple-600 text-white text-center px-4 py-2 rounded-full text-sm md:text-base hover:bg-purple-700 transition"
+                className="bg-white text-black text-center px-4 py-2 rounded-full text-sm md:text-base hover:bg-gold hover:text-white transition"
               >
                 Join the Own Your Mic Programs
               </Link>
               <Link
                 to="/event"
-                className="bg-teal-600 text-white text-center px-4 py-2 rounded-full text-sm md:text-base hover:bg-teal-700 transition"
+                className="bg-smoke_grey text-black text-center px-4 py-2 rounded-full text-sm md:text-base hover:bg-gold hover:text-white transition"
               >
                 Book Kalekye for Your Event
               </Link>
               <Link
                 to="/voice"
-                className="bg-orange-600 text-white text-center px-4 py-2 rounded-full text-sm md:text-base hover:bg-orange-700 transition"
+                className="bg-cream text-black text-center px-4 py-2 rounded-full text-sm md:text-base hover:bg-gold hover:text-white transition"
               >
                 Hire Kalekye to Voice Your Script
               </Link>
               <Link
                 to="/podcast"
-                className="bg-blue-600 text-white text-center px-4 py-2 rounded-full text-sm md:text-base hover:bg-blue-700 transition"
+                className="bg-gold text-white text-center px-4 py-2 rounded-full text-sm md:text-base hover:bg-smoke_grey hover:text-black transition"
               >
                 Listen to Conversations with Kalekye
               </Link>
