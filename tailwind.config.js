@@ -6,7 +6,7 @@ export default {
       colors: {
         dark: '#1B1B1E',
         grey: '#4A4240',
-        smoke_grey: '#ECD184',
+        smoke_grey: '#ECD1B4',
         blackberry: '#302D2E',
         gold: '#9E7758',
         brown: '#705748',

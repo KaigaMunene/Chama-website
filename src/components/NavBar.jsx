@@ -79,7 +79,7 @@ const Navbar = () => {
               isScrolled
                 ? 'border-gray-700 text-gray-700'
                 : 'border-white text-white'
-            } hover:border-brown hover:text-brown`}
+            } hover:border-brown hover:text-black hover:bg-smoke_grey`}
             onClick={handleLinkClick}
           >
             Contact Us
