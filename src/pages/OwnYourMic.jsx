@@ -1,8 +1,5 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import promotionalVideo from '../assets/videos/podcast-on.mp4';
-import testimonialImage1 from '../assets/images/free-webinar.jpeg';
-import testimonialImage2 from '../assets/images/free-webinar.jpeg';
-import testimonialImage3 from '../assets/images/free-webinar.jpeg';
 import hostProgram from '../assets/images/host-program.jpeg';
 import publicSpeaking from '../assets/images/public-speaking.jpeg';
 import voiceOver from '../assets/images/voiceover.jpeg';
@@ -131,53 +128,6 @@ const OwnYourMicPrograms = () => {
               <source src={promotionalVideo} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-          </div>
-        </section>
-
-        {/* Testimonials Section */}
-        <section className="bg-cream py-12 px-6 container mx-auto">
-          <h2 className="text-2xl md:text-4xl font-extrabold text-dark text-center mb-8">
-            What People Are Saying
-          </h2>
-          <div className="grid gap-8 md:grid-cols-3">
-            {/* Testimonial 1 */}
-            <div className="bg-white shadow-lg rounded-lg overflow-hidden p-6 text-center">
-              <img
-                src={testimonialImage1}
-                alt="Testimonial 1"
-                className="w-20 h-20 rounded-full mx-auto mb-4"
-              />
-              <p className="text-gray-600 mb-2">
-                &quot;This program transformed my confidence as a speaker!&quot;
-              </p>
-              <span className="text-gray-800 font-bold">- Jane Doe</span>
-            </div>
-
-            {/* Testimonial 2 */}
-            <div className="bg-white shadow-lg rounded-lg overflow-hidden p-6 text-center">
-              <img
-                src={testimonialImage2}
-                alt="Testimonial 2"
-                className="w-20 h-20 rounded-full mx-auto mb-4"
-              />
-              <p className="text-gray-600 mb-2">
-                &quot;I landed my first voiceover job thanks to the training.&quot;
-              </p>
-              <span className="text-gray-800 font-bold">- John Smith</span>
-            </div>
-
-            {/* Testimonial 3 */}
-            <div className="bg-white shadow-lg rounded-lg overflow-hidden p-6 text-center">
-              <img
-                src={testimonialImage3}
-                alt="Testimonial 3"
-                className="w-20 h-20 rounded-full mx-auto mb-4"
-              />
-              <p className="text-gray-600 mb-2">
-                &quot;The host program prepared me to moderate high-profile events.&quot;
-              </p>
-              <span className="text-gray-800 font-bold">- Sarah Lee</span>
-            </div>
           </div>
         </section>
 
