@@ -1,7 +1,7 @@
 const Terms = () => {
   return (
-    <section className="container mx-auto px-4 py-8 text-gray-700 font-forum">
-      <h1 className="text-3xl font-bold mb-4">
+    <section className="container mx-auto px-4 py-8 text-gray-700 min-h-screen font-forum pt-20">
+      <h1 className="text-3xl font-bold my-4">
         Own Your Mic Program Terms and Conditions
       </h1>
       <p>
@@ -142,10 +142,11 @@ const Terms = () => {
         For any questions or concerns regarding the Own Your Mic Program, please
         contact us at{' '}
         <a href="mailto:info@kalekyemumo.com" className="text-blue-500">
-            info@kalekyemumo.com
-        </a>s
+          info@kalekyemumo.com
+        </a>
+        s
       </p>
-       
+
       <p className="text-sm text-gray-600 ">Last updated: 2025</p>
     </section>
   );
