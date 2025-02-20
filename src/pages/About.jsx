@@ -1,7 +1,7 @@
 import Carousel from '../components/Carousel';
-import one from '../assets/images/podcast-4.jpg';
-import two from '../assets/images/podcast-2.jpeg';
-import three from '../assets/images/podcast-3.jpeg';
+import one from '../assets/images/podcast-1.jpeg';
+import two from '../assets/images/apva-award.webp';
+import three from '../assets/images/bts-onset.webp';
 import empowerOne from '../assets/images/empower-1.jpg';
 import empowerTwo from '../assets/images/empower-2.jpg';
 import empowerThree from '../assets/images/empower-3.jpg';
@@ -54,7 +54,7 @@ const AboutPage = () => {
             </p>
           </section>
 
-          <section className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center gap-6 mb-12">
+          <section className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-around gap-6 mb-12">
             <div className="w-full md:w-1/2 text-center md:text-left">
               <h3 className="text-2xl font-bold mb-4">
                 Empowering Through KM Network
@@ -66,14 +66,14 @@ const AboutPage = () => {
                 into memorable experiences.
               </p>
             </div>
-            <div className="w-full md:w-1/2 rounded-lg overflow-hidden shadow-lg">
+            <div className=" p-4 bg-cream rounded-lg shadow-xl">
               <Carousel images={empowerImages} />
             </div>
           </section>
 
-          <section className="flex flex-col md:flex-col lg:flex-row items-center gap-6 mb-12">
-            <div className="w-full md:w-1/2 rounded-lg overflow-hidden shadow-lg">
-              <Carousel images={talkImages} />
+          <section className="flex flex-col md:flex-col lg:flex-row items-center justify-around gap-6 mb-12">
+          <div className=" p-4 bg-cream rounded-lg shadow-xl">
+          <Carousel images={talkImages} />
             </div>
             <div className="w-full md:w-1/2 text-center md:text-left">
               <h3 className="text-2xl font-bold mb-4">
@@ -88,7 +88,7 @@ const AboutPage = () => {
             </div>
           </section>
 
-          <section className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center gap-6 mb-12">
+          <section className="flex flex-col-reverse md:flex-col-reverse justify-around lg:flex-row items-center gap-6 mb-12">
             <div className="w-full md:w-1/2 text-center md:text-left">
               <h3 className="text-2xl font-bold mb-4">Voiceover Excellence</h3>
               <p className="text-lg leading-relaxed">
@@ -97,7 +97,7 @@ const AboutPage = () => {
                 local and international brands.
               </p>
             </div>
-            <div className="w-full md:w-1/2 rounded-lg overflow-hidden shadow-lg">
+            <div className=" p-4 bg-cream rounded-lg shadow-xl">
               <Carousel images={voiceImages} />
             </div>
           </section>

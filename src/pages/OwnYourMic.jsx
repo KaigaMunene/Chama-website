@@ -1,8 +1,8 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-import promotionalVideo from '../assets/videos/podcast-on.mp4';
 import hostProgram from '../assets/images/host-program.jpeg';
 import publicSpeaking from '../assets/images/public-speaking.jpeg';
 import voiceOver from '../assets/images/voiceover.jpeg';
+import VideoSlider from '../components/VideoSlider';
 
 const OwnYourMicPrograms = () => {
   return (
@@ -27,7 +27,10 @@ const OwnYourMicPrograms = () => {
         </Helmet>
 
         {/* Hero Section */}
-        <section id='own-your-mic' className="bg-gold text-white text-center py-12 px-6">
+        <section
+          id="own-your-mic"
+          className="bg-gold text-white text-center py-12 px-6"
+        >
           <h1 className="text-3xl md:text-5xl font-extrabold mb-4">
             Master the Art of Communication with Own Your Mic
           </h1>
@@ -81,9 +84,10 @@ const OwnYourMicPrograms = () => {
                 any audience.
               </p>
               <a
-                href="#public-speaking-program"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfrCvQgpZ4f4d5LEjgYm0eSZT-4-fhslhTlX3B0-RqWOf2CKA/viewform?usp=header"
+                target="_blank"
                 className="px-6 py-3 bg-gold text-white font-medium rounded-lg hover:bg-blackberry transition duration-300"
-                aria-label="Join the Public Speaking Program"
+                aria-label="Enroll in the Voiceover Program"
               >
                 Join Today
               </a>
@@ -104,7 +108,8 @@ const OwnYourMicPrograms = () => {
                 Tailored for commercials, documentaries, and infomercials.
               </p>
               <a
-                href="#voiceover-program"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfrCvQgpZ4f4d5LEjgYm0eSZT-4-fhslhTlX3B0-RqWOf2CKA/viewform?usp=header"
+                target="_blank"
                 className="px-6 py-3 bg-gold text-white font-medium rounded-lg hover:bg-blackberry transition duration-300"
                 aria-label="Enroll in the Voiceover Program"
               >
@@ -119,15 +124,8 @@ const OwnYourMicPrograms = () => {
           <h2 className="text-2xl md:text-4xl font-extrabold text-gray-800 text-center mb-8">
             See the Programs in Action
           </h2>
-          <div className="container mx-auto max-w-4xl">
-            <video
-              controls
-              className="w-full rounded-lg shadow-lg"
-              aria-label="Promotional video showcasing Own Your Mic programs"
-            >
-              <source src={promotionalVideo} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+          <div className="container mx-auto w-full">
+            <VideoSlider />
           </div>
         </section>
 

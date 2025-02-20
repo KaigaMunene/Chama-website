@@ -1,7 +1,7 @@
 const PrivacyPolicy = () => {
   return (
-    <section className="container mx-auto px-4 py-8 text-gray-700 min-h-screen font-forum">
-      <h1 className="text-3xl font-bold mb-4">Own Your Mic Privacy Policy</h1>
+    <section className="container mx-auto px-4 py-8 text-gray-700 min-h-screen font-forum pt-20">
+      <h1 className="text-3xl font-bold my-4">Own Your Mic Privacy Policy</h1>
       <h2 className="mb-2 font-bold">1. Data Collection</h2>
       <ul className="list-disc list-inside mb-4">
         <li>
